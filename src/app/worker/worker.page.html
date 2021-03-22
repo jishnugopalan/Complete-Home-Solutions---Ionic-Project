@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+
+      </ion-menu-button>
+
+    </ion-buttons>
+    <ion-title> <ion-icon name="briefcase"></ion-icon>Job Zone</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-text><h4>Please enter correct informations and document </h4></ion-text>
+    <form [formGroup]="workerForm" (ngSubmit)="submit()">
+      <ion-card>
+      
+        <ion-item>
+          <ion-label  color="primary">Select a job</ion-label>
+          <ion-select formControlName="job_category" >
+            <ion-select-option  *ngFor="let p of joblist" value="{{ p.category }}">{{ p.category }}</ion-select-option>
+           
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+         
+          <ion-label  color="primary">
+             Start from
+          </ion-label>
+        
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="" formControlName="job_start_time" ></ion-datetime>
+        </ion-item>
+         <ion-item>
+          <ion-label  color="primary">
+            To
+          </ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="" formControlName="job_end_time" ></ion-datetime>
+        </ion-item>
+        
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-label  color="primary">Expected Sallary(per day)</ion-label>
+          <ion-input type="text" formControlName="job_salary" inputmode="text"></ion-input>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-label color="primary">Select a verification method</ion-label>
+          <ion-select formControlName="job_verification" >
+            <ion-select-option value="license">License</ion-select-option>
+            <ion-select-option value="adhaar">Adhaar</ion-select-option>
+            <ion-select-option value="voterid">Voter ID</ion-select-option>
+            <ion-select-option value="sslc">SSLC</ion-select-option>
+           
+          </ion-select>
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-label  color="primary" stacked>Upload the document</ion-label>
+          <input type="file"  (change)="encodeImageFileAsURL($event)" id="inputFileToLoad">
+        </ion-item>
+      </ion-card>
+      <ion-card>
+        <ion-item>
+          <ion-textarea placeholder="Description about the job" formControlName="job_description" ></ion-textarea>
+        </ion-item>
+      </ion-card>
+      <ion-button [disabled]="!workerForm.valid" expand="block" color="success" type="submit">Save</ion-button>
+      <ion-button expand="block" color="danger">Cancel</ion-button>
+  
+    
+  
+  </form>
+ 
+  
+    
+    
+   
+  
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom">
+        <ion-tab-button routerLink="/mainpage">
+          
+          <h1><ion-icon name="home" color="primary"></ion-icon></h1>
+          
+      </ion-tab-button>
+        <ion-tab-button routerLink="/notification" tooltip="Notifications">
+          
+          <ion-icon name="notifications-outline" color="primary"></ion-icon>
+          <ion-badge color="danger">{{count}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/chats">
+          
+        <ion-icon name="chatboxes" color="primary"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button routerLink="/worker">
+          
+      <ion-icon name="briefcase" color="primary"></ion-icon>
+    
+  </ion-tab-button>
+ 
+  <ion-tab-button routerLink="/mybookings">
+          
+    <ion-icon name="book" color="primary"></ion-icon>
+  
+</ion-tab-button>
+<ion-tab-button routerLink="/settings">
+          
+  <ion-icon name="settings" color="primary"></ion-icon>
+
+</ion-tab-button>
+
+        
+      </ion-tab-bar>
+
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>

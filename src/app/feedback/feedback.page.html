@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> <ion-icon name="arrow-back" routerLink="/settings"></ion-icon>Feedbacks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-item>
+    <ion-label position="floating">Add feedbacks or complaints about our application</ion-label>
+    <ion-input [(ngModel)]="feedbacks"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-button (click)="sendfeedbacks()">Send</ion-button>
+  </ion-item>
+</ion-card>
+</ion-content>

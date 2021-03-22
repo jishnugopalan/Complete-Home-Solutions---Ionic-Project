@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar color="primary">
+   
+    
+    <ion-title> 
+      <ion-icon name="arrow-back" routerLink="/settings"></ion-icon>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="profileForm" (ngSubmit)="submit()" *ngFor="let d of details">
+
+    <ion-card>
+
+     
+      <ion-card>
+        <ion-avatar slot="start">
+          <img src="{{d.profile_pic}}">
+        </ion-avatar>
+        <ion-item>
+          <ion-label id="profile_image" color="primary" stacked>Change Profile Photo</ion-label>
+          <input type="file"  (change)="encodeImageFileAsURL($event)" id="inputFileToLoad">
+          
+          
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="editpic()">Save</ion-button>
+        </ion-item>
+      </ion-card>
+      <ion-item>
+        <ion-label class="testclass" position="floating" >Name:{{ d.name }}</ion-label>
+        <ion-input inputmode="text" [(ngModel)]="tdo" formControlName="name" inputmode="text"></ion-input>
+        
+        <ion-button (click)="editname()">Save</ion-button>
+      </ion-item>
+      </ion-card>
+      <ion-card>
+        <!-- <ion-card>
+          <ion-item>
+           
+          </ion-item>
+        </ion-card> -->
+
+      
+        <ion-item>
+          <ion-label>Date of birth:{{ d.date_of_birth | date }}</ion-label>
+          
+           
+            <ion-datetime displayFormat="DD/MM/YYYY" min="1983-12-31" max="2001-12-31" [(ngModel)]="dob" formControlName="date_of_birth"></ion-datetime>
+            
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="editdob()">Save</ion-button>
+        </ion-item>
+        
+        </ion-card>
+        <ion-card>
+          <ion-card>
+            <ion-item> <ion-label> <ion-label>Gender:{{d.gender}}</ion-label></ion-label></ion-item>
+           
+          </ion-card>
+          
+         
+          <ion-radio-group formControlName="gender" [(ngModel)]="gdr">
+          
+             
+            
+        
+            <ion-item>
+              <ion-label>Male</ion-label>
+              <ion-radio slot="start" value="male" checked></ion-radio>
+            </ion-item>
+        
+            <ion-item>
+              <ion-label>Female</ion-label>
+              <ion-radio slot="start" value="female"></ion-radio>
+            </ion-item>
+        
+            
+          </ion-radio-group>
+          <ion-item>
+            <ion-button (click)="editgender()">Save</ion-button>
+          </ion-item>
+         
+        </ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-label class="testclass" position="floating" >Phone number:{{d.phone}}</ion-label>
+            <ion-input formControlName="phone" inputmode="text" [(ngModel)]="ph"></ion-input>
+            <ion-button (click)="editphone()">Save</ion-button>
+          </ion-item>
+          </ion-card>
+          <ion-card>
+            <ion-item>
+              <ion-label  position="floating">Email:{{d.email}}</ion-label>
+              <ion-input formControlName="email" inputmode="email" [(ngModel)]="em"></ion-input>
+              <ion-button (click)="editemail()">Save</ion-button>
+            </ion-item>
+          </ion-card>
+          
+          <ion-card>
+            <ion-item>
+              <ion-label position="floating">Bio:{{d.bio}}</ion-label>
+              <ion-input formControlName="bio" inputmode="text" [(ngModel)]="b"></ion-input>
+              <ion-button (click)="editbio()">Save</ion-button>
+            </ion-item>
+          </ion-card>
+          <!-- <ion-button  expand="block" color="success" type="submit">Save</ion-button> -->
+          <!-- <ion-button expand="block" color="danger">Cancel</ion-button> -->
+  </form>
+ 
+</ion-content>

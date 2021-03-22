@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-round-back" routerLink="/notification"></ion-icon>Notifications</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  *ngFor="let p of pages">
+    
+    <ion-card *ngFor="let u of user">
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{u.profile_pic}}">
+        </ion-avatar>
+       <ion-label>{{u.name}}</ion-label>
+      </ion-item>
+     
+    </ion-card>
+    <ion-card-content>
+      {{ p.content }}
+    </ion-card-content>
+    <ion-card></ion-card>
+  
+  
+  <ion-text color="danger"> <div class="ion-text-right">{{ p.datetime  | date:'shortTime'}}</div>
+    <div class="ion-text-right" color="danger">{{ p.datetime  | date }}</div>
+  </ion-text>
+
+
+
+ <ion-button (click)="accept(this.p.bookingid)" color="success">Accept</ion-button>
+ <ion-button (click)="reject(this.p.bookingid)" color="danger" *ngIf="a">Reject</ion-button>
+  
+</ion-card>
+<ion-text>Location</ion-text>
+<div #mapElement class="map" id="map"></div>
+<ion-text><h3>Reviews</h3></ion-text>
+  <ion-card *ngFor="let r of review">
+   
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{r.userdetails[0].profile_pic}}">
+      </ion-avatar>
+      <ion-label><b>{{r.userdetails[0].name}}</b></ion-label>
+    </ion-item>
+    <ion-item>
+      {{r.star}}<ion-icon name="star" color="warning"></ion-icon>
+      
+    </ion-item>
+    <ion-item>
+      <ion-text>{{r.commend}}</ion-text>
+    </ion-item>
+
+  </ion-card>
+</ion-content>
+

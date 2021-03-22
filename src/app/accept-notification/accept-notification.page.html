@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-round-back" routerLink="/notification"></ion-icon>Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  *ngFor="let p of pages">
+    
+    <ion-card-header>
+      <ion-card-title>{{ p.from }}</ion-card-title>
+      
+    </ion-card-header>
+    <ion-card-content>
+      {{ p.content }}
+    </ion-card-content>
+    <ion-card></ion-card>
+  
+  
+  <ion-text color="danger"> <div class="ion-text-right">{{ p.datetime  | date:'shortTime'}}</div>
+    <div class="ion-text-right" color="danger">{{ p.datetime  | date }}</div>
+  </ion-text>
+ 
+  
+</ion-card>
+</ion-content>

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+
+      </ion-menu-button>
+
+    </ion-buttons>
+    <ion-title> <ion-icon name="chatboxes"></ion-icon>Messages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+<ion-card  *ngFor="let p of pages">
+  <ion-card-header>
+    <!-- <ion-avatar class="ion-margin-start">
+      <img src="{{ p.pic }}">
+      {{ p.name }}
+    </ion-avatar> -->
+   
+      
+      <ion-item (click)="readychat(p._id,p.name,p.profile_pic)">
+        <ion-avatar slot="start">
+          <img src="{{ p.profile_pic }}">
+        </ion-avatar>
+        <ion-label>{{ p.name }}</ion-label>
+       
+        
+      </ion-item>
+     
+   
+   
+  </ion-card-header>
+</ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom">
+        <ion-tab-button routerLink="/mainpage">
+          
+          <h1><ion-icon name="home" color="primary"></ion-icon></h1>
+          
+      </ion-tab-button>
+        <ion-tab-button routerLink="/notification" tooltip="Notifications">
+          
+          <ion-icon name="notifications-outline" color="primary"></ion-icon>
+          <ion-badge color="danger">{{count}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/chats">
+          
+        <ion-icon name="chatboxes" color="primary"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button routerLink="/worker">
+          
+      <ion-icon name="briefcase" color="primary"></ion-icon>
+    
+  </ion-tab-button>
+ 
+  <ion-tab-button routerLink="/mybookings">
+          
+    <ion-icon name="book" color="primary"></ion-icon>
+  
+</ion-tab-button>
+<ion-tab-button routerLink="/settings">
+          
+  <ion-icon name="settings" color="primary"></ion-icon>
+
+</ion-tab-button>
+
+        
+      </ion-tab-bar>
+
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>
+

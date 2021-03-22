@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-round-back" routerLink="/myworkers"></ion-icon>Workers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    
+  
+  
+  <ion-card *ngFor="let w of workersdetails"  class="ion-margin-start">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{w.profile_pic}}">
+      </ion-avatar>
+      <ion-label><b>{{w.name}}</b></ion-label>
+      <ion-label>({{w.workersdetails[0].available_status}})</ion-label>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-chip>
+        <ion-avatar>
+          <img src="{{w.profile_pic}}">
+        </ion-avatar>
+        <ion-label>{{w.name}}</ion-label>
+      </ion-chip>
+    
+    </ion-item> -->
+   
+    <ion-item>
+      <b>Category:</b>{{w.workersdetails[0].job_category}}
+
+    </ion-item>
+   
+    <ion-item>
+      <b>Working time:</b>{{w.workersdetails[0].job_start_time | date:'shortTime' }} to {{w.workersdetails[0].job_end_time | date:'shortTime'}}
+    </ion-item>
+    <ion-item>
+      
+      <b>Salary:</b>{{w.workersdetails[0].job_salary}}Rs
+     
+    </ion-item>
+    <ion-item>
+     <b> Description:</b>{{w.workersdetails[0].job_description}}
+    </ion-item>
+    <ion-item>
+      
+    
+
+      <ion-button (click)="bookworker(this.w.workersdetails[0].userid)">
+        book
+      </ion-button>
+     
+    </ion-item>
+    
+    <!-- <ion-text *ngIf=note color="danger">You cannot book this person</ion-text> -->
+  </ion-card>
+  
+  <ion-text><b>Location</b></ion-text>
+  <div #mapElement class="map" id="map"></div>
+  <ion-text><h3>Reviews</h3></ion-text>
+  <ion-card *ngFor="let r of review">
+   
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="{{r.userdetails[0].profile_pic}}">
+      </ion-avatar>
+      <ion-label><b>{{r.userdetails[0].name}}</b></ion-label>
+    </ion-item>
+    <ion-item>
+      {{r.star}}<ion-icon name="star" color="warning"></ion-icon>
+      
+    </ion-item>
+    <ion-item>
+      <ion-text>{{r.commend}}</ion-text>
+    </ion-item>
+
+  </ion-card>
+</ion-content>

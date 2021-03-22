@@ -1,0 +1,54 @@
+<ion-header>
+  
+  <ion-toolbar color="primary">
+   
+    <ion-title><ion-icon name="home" routerLink="/admin"></ion-icon>
+      Add jobs</ion-title>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <form [formGroup]="jobForm" (ngSubmit)="submit()">
+    <ion-card>
+      <ion-item>
+        <ion-label position="floating">Add jobs</ion-label>
+        <ion-input formControlName="category" inputmode="text"></ion-input>
+      </ion-item>
+      
+    </ion-card>
+    <ion-card>
+      <ion-item>
+        
+          <ion-button [disabled]="!jobForm.valid" color="primary" expand="block" type="submit" class="ion-no-margin">Addd job</ion-button>
+         
+        
+      </ion-item>
+    </ion-card>
+    
+  </form>
+</ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom" color="danger">
+        <ion-tab-button routerLink="/admin-addcategory">
+          <ion-label color="light"><h3><b>Add jobs</b></h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/admin-workerlist">
+          <ion-label color="light"><h3><b>Job approval</b>s</h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/admin-feedbacks">
+          <ion-label color="light"><h3><b>Feedbacks</b></h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/login">
+          <ion-label color="light"><h3><b>Logout</b></h3></ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>

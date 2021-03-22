@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      
+
+    </ion-buttons>
+    <ion-title> <ion-icon name="notifications-outline"></ion-icon>Notification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card  @slidelefttitle *ngFor="let p of pages" (click)="viewnotification(this.p.bookingid,this.p.notificationtype,this.p._id)">
+    
+      <ion-card-header>
+        <ion-card-title>{{ p.from }}</ion-card-title>
+        
+      </ion-card-header>
+      <ion-card-content>
+        {{ p.content }}
+      </ion-card-content>
+      <ion-card></ion-card>
+    
+    
+    <ion-text color="danger"> <div class="ion-text-right">{{ p.datetime  | date:'shortTime'}}</div>
+      <div class="ion-text-right" color="danger">{{ p.datetime  | date }}</div>
+    </ion-text>
+   
+    
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom">
+        <ion-tab-button routerLink="/mainpage">
+          
+          <h1><ion-icon name="home" color="primary"></ion-icon></h1>
+          
+      </ion-tab-button>
+        <ion-tab-button routerLink="/notification" tooltip="Notifications">
+          
+          <ion-icon name="notifications-outline" color="primary"></ion-icon>
+          <ion-badge color="danger">{{count}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/chats">
+          
+        <ion-icon name="chatboxes" color="primary"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button routerLink="/worker">
+          
+      <ion-icon name="briefcase" color="primary"></ion-icon>
+    
+  </ion-tab-button>
+ 
+  <ion-tab-button routerLink="/mybookings">
+          
+    <ion-icon name="book" color="primary"></ion-icon>
+  
+</ion-tab-button>
+<ion-tab-button routerLink="/settings">
+          
+  <ion-icon name="settings" color="primary"></ion-icon>
+
+</ion-tab-button>
+
+        
+      </ion-tab-bar>
+
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>
+

@@ -1,0 +1,233 @@
+
+  <ion-menu contentId="content">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu</ion-title>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        
+          
+          <ion-menu-toggle auto-hide="false">
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/mainpage">
+                <ion-icon name="home" color="primary"></ion-icon>
+                Home
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/notification">
+                <ion-icon name="notifications-outline" color="primary"></ion-icon>
+                Notifications<ion-badge color="danger">{{count}}</ion-badge>
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/chats">
+                <ion-icon name="chatboxes" color="primary"></ion-icon>
+                Chats
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/worker">
+                <ion-icon name="briefcase" color="primary"></ion-icon>
+                Job Zone
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/mybookings">
+                <ion-icon name="book" color="primary"></ion-icon>
+                My Bookings
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/settings">
+                <ion-icon name="settings" color="primary"></ion-icon>
+                Settings
+              </ion-item>
+            </ion-card>
+            <ion-card>
+             
+              <ion-item routerLink="/userhome/userhome/about">
+                <ion-icon name="alert" color="primary"></ion-icon>
+                About
+              </ion-item>
+            </ion-card>
+            
+
+            
+          </ion-menu-toggle>
+        
+        
+      </ion-list>
+    </ion-content>
+    
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- <ion-toolbar color="primary">
+    <div class="ion-text-center"><h4>Home</h4></div> 
+  </ion-toolbar>
+  
+  <ion-menu side="start" menuId="first">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+        <ion-item>Menu Item</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+
+<ion-content color="danger">
+  <div>
+    <div class="ion-text-center"><h4 color="light">Categories</h4></div>
+  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-card color="light">
+            <img src="../../assets/img/cleaning1.jpg"/> 
+            <ion-card-header>
+             
+              <ion-card-title>Cleaning</ion-card-title>
+            </ion-card-header>
+        
+          </ion-card>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-card color="light">
+            <img src="../../assets/img/plumbung2.jpg"/> 
+            <ion-card-header>
+            
+            </ion-card-header>
+        
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-card color="light">
+              <img src="../../assets/img/wiring.jfif"/> 
+              <ion-card-header>
+               
+                <ion-card-title>Wiring</ion-card-title>
+              </ion-card-header>
+          
+            </ion-card>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-card color="light">
+              <img src="../../assets/img/painting1.jpg"/> 
+              <ion-card-header>
+               
+                <ion-card-title>Painting</ion-card-title>
+              </ion-card-header>
+          
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid>
+      <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-card color="light">
+              <img src="../../assets/img/electronics.gif"/> 
+              <ion-card-header>
+               
+                <ion-card-title>Electroincs</ion-card-title>
+              </ion-card-header>
+          
+            </ion-card>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-card color="light">
+              <img src="../../assets/img/vehicle4.jpg"/> 
+              <ion-card-header>
+               
+                <ion-card-title>Vehicle</ion-card-title>
+              </ion-card-header>
+          
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+      </ion-grid> -->
+ 
+<!-- <ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/userhome">
+      <ion-icon color="primary" name="home"></ion-icon>
+      <ion-label color="danger"><b>Home</b></ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon color="primary" name="person"></ion-icon>
+      <ion-label color="danger">Profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications">
+      <ion-icon color="primary" name="notifications-outline"></ion-icon>
+      <ion-label color="danger"><b>Notifications</b></ion-label>
+      <ion-badge>1</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chats">
+      <ion-icon color="primary" name="chatboxes"></ion-icon>
+      <ion-label color="danger"><b>Messages</b></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon color="primary" name="settings"></ion-icon>
+      <ion-label color="danger"><b>Settings</b></ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
+<!-- </ion-content> -->

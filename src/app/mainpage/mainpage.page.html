@@ -1,0 +1,300 @@
+<ion-header>
+
+    <ion-toolbar color="primary">
+
+        <ion-title>
+            <ion-icon name="home"></ion-icon>Home</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+<ion-toolbar>
+    <ion-searchbar placeholder="search for a job" animated [(ngModel)]="search" (change)="searchcategory($event)"></ion-searchbar>
+    <ion-card *ngIf="v">
+        <ion-item>
+            <ion-label *ngFor="let p of s" (click)="viewserchedworker(this.p._id)">
+                {{p.name}}
+            </ion-label>
+        </ion-item>
+
+    </ion-card>
+
+</ion-toolbar>
+
+
+
+
+<ion-content>
+    <ion-item *ngIf="first">
+        <ion-avatar>
+            <img src="../../assets/img/workerbadge.png">
+
+        </ion-avatar>
+        <ion-label>worker</ion-label>
+        <ion-toggle [(ngModel)]="status" (ionChange)="change()"></ion-toggle>
+    </ion-item>
+
+
+
+    <!-- <input type="text" [(ngModel)]="search" (change)="searchcategory($event)" id="inputFileToLoad"> -->
+    <!-- <img @slidelefttitle src="../../assets/img/cleaning1.jpg"/> -->
+    <ion-slides @slidelefttitle>
+        <ion-slide>
+            <ion-card color="primary">
+                <ion-card-content><img style="width: 500px; height: 250px;" src="../../assets/img/chs2.jpg" /></ion-card-content>
+
+                <ion-card-header>
+                    <ion-card-title>House hold services</ion-card-title>
+                    <ion-icon name="arrow-round-forward"></ion-icon>
+
+                </ion-card-header>
+
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card color="primary">
+                <ion-card-content><img style="width: 500px; height: 250px;" src="../../assets/img/connect.jpg" /></ion-card-content>
+
+                <ion-card-header>
+                    <ion-card-title>Connect with your nearest workers</ion-card-title>
+                    <ion-icon name="arrow-round-forward"></ion-icon>
+
+                </ion-card-header>
+
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card color="primary">
+                <ion-card-content><img style="width: 500px; height: 250px;" src="../../assets/img/worker1.jpg" /></ion-card-content>
+
+                <ion-card-header>
+                    <ion-card-title>Create your worker account and improve your jobs</ion-card-title>
+                    <ion-icon name="arrow-round-back"></ion-icon>
+
+
+                </ion-card-header>
+
+            </ion-card>
+        </ion-slide>
+        <!-- <ion-slide>
+      <ion-card color="primary">
+        <ion-card-content><img style="width: 500px; height: 250px;" src="../../assets/img/2471.jfif"/></ion-card-content>
+         
+        <ion-card-header>
+          <ion-card-title>24  x 7 Coustomer services</ion-card-title> <ion-icon name="arrow-round-back"></ion-icon>
+
+        
+        </ion-card-header>
+    
+      </ion-card>
+    </ion-slide> -->
+
+        <!-- <ion-slide>
+      <img src="../../assets/img/cleaning1.jpg"/>
+      <h2>Welcome to the <b>ICA</b></h2>
+      <p>The <b>ionic conference app</b> is a practical preview of the ionic framework in action, and a demonstration of proper code use.</p>
+    </ion-slide> -->
+
+        <!-- <ion-slide>
+      <img src="./slide-2.png"/>
+      <h2>What is Ionic?</h2>
+      <p><b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-3.png"/>
+      <h2>What is Ionic Appflow?</h2>
+      <p><b>Ionic Appflow</b> is a powerful set of services and features built on top of Ionic Framework that brings a totally new level of app development agility to mobile dev teams.</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./slide-4.png"/>
+      <h2>Ready to Play?</h2>
+      <ion-button fill="clear">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+    </ion-slide> -->
+
+    </ion-slides>
+
+    <ion-card>
+        <ion-card-title>
+
+            <div class="ion-text-center">
+                <h4 color="light" @fadein>Categories</h4>
+            </div>
+
+        </ion-card-title>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Cleaning')">
+                            <ion-card-content> <img style="height: 100px;" src="../../assets/img/cleaning1.jpg" /> </ion-card-content>
+
+                            <ion-card-header>
+
+                                <ion-card-title @fadein>Cleaning</ion-card-title>
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Plumbing')">
+                            <ion-card-content><img style=" height: 100px;" src="../../assets/img/plumbung2.jpg" /></ion-card-content>
+
+                            <ion-card-header>
+                                <ion-card-title @fadein>Plumbing</ion-card-title>
+
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Wiring')">
+                            <ion-card-content> <img style=" height: 100px;" src="../../assets/img/wiring.jfif" /> </ion-card-content>
+
+                            <ion-card-header>
+
+                                <ion-card-title @fadein>Wiring</ion-card-title>
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Painting')">
+                            <ion-card-content><img style=" height: 100px;" src="../../assets/img/painting1.jpg" /></ion-card-content>
+
+                            <ion-card-header>
+
+                                <ion-card-title @fadein>Painting</ion-card-title>
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Electronics')">
+                            <ion-card-content><img style=" height: 100px;" src="../../assets/img/electronics1.jpg" /> </ion-card-content>
+
+                            <ion-card-header>
+
+                                <ion-card-title @fadein>Electroincs</ion-card-title>
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div>
+                        <ion-card color="light" (click)="viewmyworker('Vehicle')">
+                            <ion-card-content><img style=" height: 100px;" src="../../assets/img/vehicle4.jpg" /> </ion-card-content>
+
+                            <ion-card-header>
+
+                                <ion-card-title @fadein>Vehicle</ion-card-title>
+                            </ion-card-header>
+
+                        </ion-card>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+        <ion-button expand="block" color="danger" routerLink="/joblist">See more</ion-button>
+    </ion-card>
+    <!-- <ion-card color="success">
+      <ion-card-subtitle>
+        Click here to become a worker and to improve your job opportunities 
+      </ion-card-subtitle>
+    </ion-card> -->
+    <!-- <ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" routerLink="/userhome">
+      <ion-icon color="primary" name="home"></ion-icon>
+      <ion-label color="danger"><b>Home</b></ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon color="primary" name="person"></ion-icon>
+      <ion-label color="danger">Profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="notifications">
+      <ion-icon color="primary" name="notifications-outline"></ion-icon>
+      <ion-label color="danger"><b>Notifications</b></ion-label>
+      <ion-badge>1</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="chats">
+      <ion-icon color="primary" name="chatboxes"></ion-icon>
+      <ion-label color="danger"><b>Messages</b></ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="settings">
+      <ion-icon color="primary" name="settings"></ion-icon>
+      <ion-label color="danger"><b>Settings</b></ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <ion-tabs>
+            <ion-tab-bar sloat="bottom">
+                <ion-tab-button routerLink="/mainpage">
+
+                    <h1>
+                        <ion-icon name="home" color="primary"></ion-icon>
+                    </h1>
+
+                </ion-tab-button>
+                <ion-tab-button routerLink="/notification" tooltip="Notifications">
+
+                    <ion-icon name="notifications-outline" color="primary"></ion-icon>
+                    <ion-badge color="danger">{{count}}</ion-badge>
+                </ion-tab-button>
+                <ion-tab-button routerLink="/chats">
+
+                    <ion-icon name="chatboxes" color="primary"></ion-icon>
+
+                </ion-tab-button>
+                <ion-tab-button routerLink="/worker">
+
+                    <ion-icon name="briefcase" color="primary"></ion-icon>
+
+                </ion-tab-button>
+
+                <ion-tab-button routerLink="/mybookings">
+
+                    <ion-icon name="book" color="primary"></ion-icon>
+
+                </ion-tab-button>
+                <ion-tab-button routerLink="/settings">
+
+                    <ion-icon name="settings" color="primary"></ion-icon>
+
+                </ion-tab-button>
+
+
+            </ion-tab-bar>
+
+        </ion-tabs>
+
+    </ion-toolbar>
+</ion-footer>

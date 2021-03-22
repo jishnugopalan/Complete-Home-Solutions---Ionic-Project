@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="arrow-round-back" routerLink="/mainpage"></ion-icon> Job Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+   
+    <ion-card-content>
+      <ion-list *ngFor="let x of joblist">
+        <ion-item (click)="viewWorkers(this.x.category)">
+          <ion-text>
+            {{ x.category }}
+          </ion-text>
+         
+        </ion-item>
+              </ion-list>
+      <!-- <ion-list *ngFor="let j of joblist; let i = index ;">
+<ion-item>
+  <ion-text>
+    {{ j[i].category }}
+  </ion-text>
+ 
+</ion-item>
+      </ion-list> -->
+       <!-- <ul class="list-group">
+    <li  *ngFor="let j of joblist; let i = index" class="list-group-item" >
+      {{ j[i] }}
+    </li>
+  </ul> -->
+  
+
+    </ion-card-content>
+   
+   
+    
+  </ion-card>
+
+</ion-content>
+

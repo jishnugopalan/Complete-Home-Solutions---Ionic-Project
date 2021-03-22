@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+
+      </ion-menu-button>
+
+    </ion-buttons>
+    <ion-title> <ion-icon name="settings"></ion-icon>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-card routerLink="/profile">
+    <ion-card-header> <ion-card-title><ion-icon name="person" color="primary"></ion-icon>Profile</ion-card-title>
+    </ion-card-header>
+      
+   </ion-card>
+   <ion-card routerLink="/workeraccount" *ngIf="w">
+    <ion-card-header> <ion-card-title><ion-icon name="person" color="primary"></ion-icon>Worker Account</ion-card-title>
+    </ion-card-header>
+      
+   </ion-card>
+
+<ion-card routerLink="/changepassword">
+  <ion-card-header> <ion-card-title><ion-icon name="lock" color="primary"></ion-icon>Change Password</ion-card-title>
+  </ion-card-header>
+    
+ </ion-card>
+
+<ion-card routerLink="/feedback">
+  <ion-card-header> <ion-card-title><ion-icon name="paper" color="primary"></ion-icon>Feedbacks</ion-card-title>
+  </ion-card-header>
+    
+ </ion-card>
+ <ion-card routerLink="/about">
+  <ion-card-header> <ion-card-title><ion-icon name="alert" color="primary"></ion-icon>About</ion-card-title>
+  </ion-card-header>
+    
+ </ion-card>
+ 
+ <!-- <ion-card>
+  <ion-card-header> <ion-card-title><ion-icon name="help-circle-outline" color="primary"></ion-icon>Helps</ion-card-title>
+  </ion-card-header>
+    
+ </ion-card> -->
+ <ion-card routerLink="/login">
+  <ion-card-header> <ion-card-title><ion-icon name="log-out" color="primary"></ion-icon>Logout</ion-card-title>
+  </ion-card-header>
+    
+ </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom">
+        <ion-tab-button routerLink="/mainpage">
+          
+          <h1><ion-icon name="home" color="primary"></ion-icon></h1>
+          
+      </ion-tab-button>
+        <ion-tab-button routerLink="/notification" tooltip="Notifications">
+          
+          <ion-icon name="notifications-outline" color="primary"></ion-icon>
+          <ion-badge color="danger">{{count}}</ion-badge>
+      </ion-tab-button>
+      <ion-tab-button routerLink="/chats">
+          
+        <ion-icon name="chatboxes" color="primary"></ion-icon>
+      
+    </ion-tab-button>
+    <ion-tab-button routerLink="/worker">
+          
+      <ion-icon name="briefcase" color="primary"></ion-icon>
+    
+  </ion-tab-button>
+ 
+  <ion-tab-button routerLink="/mybookings">
+          
+    <ion-icon name="book" color="primary"></ion-icon>
+  
+</ion-tab-button>
+<ion-tab-button routerLink="/settings">
+          
+  <ion-icon name="settings" color="primary"></ion-icon>
+
+</ion-tab-button>
+
+        
+      </ion-tab-bar>
+
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>

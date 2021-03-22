@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title><ion-icon name="home" routerLink="/admin"></ion-icon>Feedbacks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let f of feeds">
+    <ion-card>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="{{f.feedbacks[0].profile_pic}}">
+        </ion-avatar>
+        <ion-label><b>{{f.feedbacks[0].name}}</b></ion-label><br>
+       
+      
+
+      </ion-item>
+      <ion-item>
+        <ion-label>{{f.feedbacks[0].phone}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{f.feedbacks[0].email}}</ion-label>
+      </ion-item>
+      <!-- <ion-card-header color="primary">{{f.feedbacks[0].name}}</ion-card-header> -->
+      <ion-item>
+        <ion-card-content>{{f.feedback}}</ion-card-content>
+      </ion-item>
+      
+    </ion-card>
+    
+  </ion-card>
+  
+  
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar sloat="bottom" color="danger">
+        <ion-tab-button routerLink="/admin-addcategory">
+          <ion-label color="light"><h3><b>Add jobs</b></h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/admin-workerlist">
+          <ion-label color="light"><h3><b>Job approval</b>s</h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/admin-feedbacks">
+          <ion-label color="light"><h3><b>Feedbacks</b></h3></ion-label>
+        </ion-tab-button>
+        <ion-tab-button routerLink="/login">
+          <ion-label color="light"><h3><b>Logout</b></h3></ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  
+  </ion-toolbar>
+</ion-footer>
